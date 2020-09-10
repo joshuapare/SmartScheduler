@@ -1,0 +1,27 @@
+.leftPane {
+    
+    -fx-background-color: #812b90;
+    -fx-font-family: Arial, Helvetica, sans-serif;
+}
+
+.rightPane {
+    -fx-background-color: #e7e7e8;
+}
+
+#signinlabel {
+	
+}
+
+#username {
+    
+}
+
+#password {
+
+}
+
+#submit {
+	-fx-background-color: #e7e7e8;
+
+	-fx-border-color: #812b90;
+}

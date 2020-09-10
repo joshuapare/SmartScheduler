@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox prefHeight="800.0" prefWidth="200.0" style="-fx-background-color: purple;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="97.0" prefWidth="151.0">
+         <children>
+            <ImageView fitHeight="56.0" fitWidth="151.0" layoutX="25.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@pictures/FusionLogoFullReverse.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <JFXButton maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="151.0" styleClass="leftMenuButton" text="Home" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="13.0" />
+         </font>
+      </JFXButton>
+      <Separator layoutX="10.0" layoutY="181.0" maxHeight="-Infinity" minHeight="-Infinity" opacity="0.5" prefHeight="5.0" prefWidth="139.0" />
+      <JFXButton maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="151.0" styleClass="leftMenuButton" text="Reports" textFill="WHITE" />
+      <Separator maxHeight="-Infinity" minHeight="-Infinity" opacity="0.5" prefHeight="5.0" prefWidth="139.0" />
+      <JFXButton maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="151.0" styleClass="leftMenuButton" text="Students" textFill="WHITE" />
+      <Separator maxHeight="-Infinity" minHeight="-Infinity" opacity="0.5" prefHeight="5.0" prefWidth="139.0" />
+      <JFXButton maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="151.0" styleClass="leftMenuButton" text="Teachers" textFill="WHITE" />
+      <Separator maxHeight="-Infinity" minHeight="-Infinity" opacity="0.5" prefHeight="3.0" prefWidth="139.0" />
+      <JFXButton maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="151.0" styleClass="leftMenuButton" text="Smart Scheduler" textFill="WHITE" />
+      <Separator maxHeight="-Infinity" minHeight="-Infinity" opacity="0.5" prefHeight="5.0" prefWidth="139.0" />
+      <JFXButton maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="151.0" styleClass="leftMenuButton" text="Macros" textFill="WHITE" />
+   </children>
+</VBox>

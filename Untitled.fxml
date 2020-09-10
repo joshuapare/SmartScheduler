@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<HBox id="page" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="946.0" prefWidth="1349.0" stylesheets="@src/sample/mainpage.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane id="leftToolbar" prefHeight="922.0" prefWidth="244.0">
+         <children>
+            <AnchorPane layoutX="14.0" layoutY="199.0" styleClass="toolbarButton" />
+         </children>
+      </Pane>
+      <Pane id="rightArea" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="946.0" prefWidth="1188.0">
+         <children>
+            <JFXTreeTableView layoutX="49.0" layoutY="173.0" prefHeight="759.0" prefWidth="1050.0">
+               <columns>
+                  <TreeTableColumn id="timesColumn" minWidth="100.0" prefWidth="0.0" />
+                  <TreeTableColumn id="mondayColumn" maxWidth="190.0" minWidth="190.0" prefWidth="190.0" text="Monday" />
+                  <TreeTableColumn id="tuesdayColumn" maxWidth="190.0" minWidth="190.0" prefWidth="190.0" text="Tuesday" />
+                  <TreeTableColumn id="wednesdayColumn" maxWidth="190.0" minWidth="190.0" prefWidth="190.0" text="Wednesday" />
+                  <TreeTableColumn id="thursdayColumn" maxWidth="190.0" minWidth="190.0" prefWidth="190.0" text="Thursday" />
+                  <TreeTableColumn id="fridayColumn" maxWidth="-1.0" minWidth="190.0" prefWidth="190.0" text="Friday" />
+               </columns>
+            </JFXTreeTableView>
+            <JFXDatePicker defaultColor="#812b90" layoutX="49.0" layoutY="84.0" prefHeight="27.0" prefWidth="258.0" />
+            <JFXComboBox layoutX="544.0" layoutY="84.0" prefHeight="27.0" prefWidth="167.0" promptText="Student" />
+            <JFXComboBox layoutX="932.0" layoutY="84.0" prefHeight="27.0" prefWidth="167.0" promptText="Type" />
+            <JFXComboBox layoutX="344.0" layoutY="84.0" prefHeight="27.0" prefWidth="167.0" promptText="Teacher" />
+            <JFXComboBox layoutX="731.0" layoutY="84.0" prefHeight="27.0" prefWidth="167.0" promptText="Options" />
+            <JFXButton layoutX="75.0" layoutY="129.0" prefHeight="27.0" prefWidth="295.0" styleClass="appointmentButton" text="Add Appointment" />
+            <JFXButton layoutX="427.0" layoutY="129.0" prefHeight="27.0" prefWidth="295.0" styleClass="appointmentButton" text="Edit Appointment" />
+            <JFXButton layoutX="785.0" layoutY="129.0" prefHeight="27.0" prefWidth="295.0" styleClass="appointmentButton" text="Delete Appointment" />
+            <JFXButton alignment="CENTER" contentDisplay="RIGHT" layoutX="932.0" layoutY="14.0" prefHeight="65.0" prefWidth="167.0" text="Joshua Pare" textAlignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView blendMode="SRC_ATOP" fitHeight="55.0" fitWidth="55.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Downloads/JoshPare.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </Pane>
+   </children>
+</HBox>
