@@ -1,10 +1,15 @@
 #page {
-	
+	-fx-font-family: "Roboto Thin";
+}
+
+.calendarColumn {
+	-fx-border-width: 0 1 0 0;
+	-fx-border-color: lightgrey;
 }
 
 #leftToolbar {
 	
-	-fx-background-color: #b177bb;
+	-fx-background-color: #812b90;
 
 }
 
@@ -49,16 +54,33 @@
 	-fx-border-color: #b177bb;
 	-fx-text-fill: #4d4d4d;
 	-fx-padding: 0 0 0 5;
-	
 }
 
 .appointmentObject {
 	-fx-background-color: #EDE6F2;
 	-fx-border-color: #b177bb;
-	-fx-text-fill: #4d4d4d;
-	-fx-font-size: 10;
-	-fx-padding: 16 0 0 5;
+	-fx-padding: 10;
 	-fx-border-radius: 2;
+}
+
+#appointmentControl {
+	-fx-background-color: whitesmoke;
+	-fx-border-color: #b177bb;
+	-fx-border-radius: 5;
+}
+
+#appointmentHeader {
+	-fx-background-color: #812b90;
+}
+
+.appointmentControlButton {
+	-fx-text-fill: #010101;
+	-fx-font-size: 15;
+	-fx-border-color: lightgrey;
+	-fx-border-width: 0 0 1 0;
+	-fx-alignment: center-left;
+	-fx-graphic-text-gap: 15px;
+	-fx-padding: 0 0 0 20;
 }
 
 #userPicture {

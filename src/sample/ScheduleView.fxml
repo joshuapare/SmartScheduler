@@ -11,467 +11,705 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox id="page" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@mainpage.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ScheduleViewController">
+<HBox id="page" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@mainpage.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ScheduleViewController">
    <children>
-      <Pane id="rightArea" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="800.0" prefWidth="1060.0">
+      <VBox id="leftToolbar" fx:id="drawer" prefHeight="1080.0" stylesheets="@mainpage.css">
          <children>
-            <JFXDatePicker fx:id="datePicker" defaultColor="#812b90" layoutX="20.0" layoutY="27.0" prefHeight="27.0" prefWidth="211.0" />
-            <JFXComboBox fx:id="studentChoice" layoutX="463.0" layoutY="27.0" prefHeight="27.0" prefWidth="167.0" promptText="Student" />
-            <JFXComboBox fx:id="typeChoice" layoutX="882.0" layoutY="27.0" prefHeight="27.0" prefWidth="167.0" promptText="Type" />
-            <JFXComboBox fx:id="teacherChoice" layoutX="258.0" layoutY="27.0" prefHeight="27.0" prefWidth="167.0" promptText="Teacher" />
-            <JFXComboBox fx:id="optionsChoice" layoutX="673.0" layoutY="27.0" prefHeight="27.0" prefWidth="167.0" promptText="Options" />
-            <ScrollPane fitToWidth="true" layoutX="20.0" layoutY="173.0" pannable="true" prefHeight="628.0" prefWidth="1040.0">
-               <content>
-                  <HBox alignment="TOP_CENTER" prefHeight="1440.0" prefWidth="1094.0">
+            <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="97.0" prefWidth="151.0">
+               <children>
+                  <ImageView fx:id="image" fitHeight="27.0" fitWidth="117.0" layoutX="25.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@pictures/FusionLogoFullReverse.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <JFXButton maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="151.0" styleClass="leftMenuButton" text="Home" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </JFXButton>
+            <Separator layoutX="10.0" layoutY="181.0" maxHeight="-Infinity" minHeight="-Infinity" opacity="0.5" prefHeight="5.0" prefWidth="139.0">
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </Separator>
+            <JFXButton maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="126.0" styleClass="leftMenuButton" text="Reports" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <Separator maxHeight="-Infinity" minHeight="-Infinity" opacity="0.5" prefHeight="5.0" prefWidth="139.0">
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </Separator>
+            <JFXButton maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="151.0" styleClass="leftMenuButton" text="Students" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <Separator maxHeight="-Infinity" minHeight="-Infinity" opacity="0.5" prefHeight="5.0" prefWidth="139.0">
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </Separator>
+            <JFXButton maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="151.0" styleClass="leftMenuButton" text="Teachers" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <Separator maxHeight="-Infinity" minHeight="-Infinity" opacity="0.5" prefHeight="3.0" prefWidth="139.0">
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </Separator>
+            <JFXButton maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="151.0" styleClass="leftMenuButton" text="Smart Scheduler" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <Separator maxHeight="-Infinity" minHeight="-Infinity" opacity="0.5" prefHeight="5.0" prefWidth="139.0">
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </Separator>
+            <JFXButton maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="151.0" styleClass="leftMenuButton" text="Macros" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </VBox>
+      <StackPane>
+         <children>
+            <HBox>
+               <children>
+                  <VBox fx:id="calendarArea" minWidth="1200.0" prefWidth="1523.0">
                      <children>
-                        <Pane minHeight="1000.0" prefHeight="1444.0" prefWidth="60.0">
+                        <HBox minHeight="-Infinity" prefHeight="70.0" VBox.vgrow="ALWAYS">
                            <children>
-                              <VBox layoutX="-2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1440.0" prefWidth="60.0">
+                              <Pane HBox.hgrow="ALWAYS">
                                  <children>
-                                    <Pane prefHeight="60.0">
+                                    <JFXDatePicker fx:id="datePicker" defaultColor="#812b90" layoutX="35.0" layoutY="11.0" prefHeight="27.0" prefWidth="275.0" showWeekNumbers="true" />
+                                 </children>
+                              </Pane>
+                              <Pane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <JFXComboBox fx:id="teacherChoice" layoutX="31.0" layoutY="11.0" prefHeight="27.0" prefWidth="200.0" promptText="Teacher" />
+                                 </children>
+                              </Pane>
+                              <Pane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <JFXComboBox fx:id="studentChoice" layoutX="39.0" layoutY="11.0" prefHeight="27.0" prefWidth="200.0" promptText="Student" />
+                                 </children>
+                              </Pane>
+                              <Pane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <JFXComboBox fx:id="optionsChoice" layoutX="24.0" layoutY="11.0" prefHeight="27.0" prefWidth="200.0" promptText="Options" />
+                                 </children>
+                              </Pane>
+                              <Pane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <JFXComboBox fx:id="typeChoice" layoutX="22.0" layoutY="11.0" prefHeight="27.0" prefWidth="200.0" promptText="Type" />
+                                 </children>
+                              </Pane>
+                           </children>
+                           <padding>
+                              <Insets left="20.0" right="20.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER" minHeight="-Infinity" prefHeight="42.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Pane prefHeight="42.0" prefWidth="100.0">
+                                 <children>
+                                    <JFXButton contentDisplay="CENTER" layoutX="30.0" layoutY="1.0" styleClass="weekSelect" text="&lt;" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="46.0" layoutY="8.0" styleClass="weekSelect" text="September 5" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="49.0" prefWidth="56.0">
+                                 <children>
+                                    <Label layoutX="24.0" layoutY="8.0" styleClass="weekSelect" text="-" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="41.0" layoutY="8.0" styleClass="weekSelect" text="September 12" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="42.0" prefWidth="100.0">
+                                 <children>
+                                    <JFXButton layoutX="30.0" layoutY="1.0" styleClass="weekSelect" text="&gt;" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </HBox>
+                        <HBox maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefHeight="42.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="62.0" />
+                              <Pane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label layoutX="75.0" layoutY="13.0" text="Sunday" />
+                                 </children>
+                              </Pane>
+                              <Pane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label layoutX="76.0" layoutY="13.0" text="Monday" />
+                                 </children>
+                              </Pane>
+                              <Pane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label layoutX="75.0" layoutY="13.0" text="Tuesday" />
+                                 </children>
+                              </Pane>
+                              <Pane maxHeight="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label layoutX="70.0" layoutY="13.0" text="Wednesday" />
+                                 </children>
+                              </Pane>
+                              <Pane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label layoutX="76.0" layoutY="13.0" text="Thursday" />
+                                 </children>
+                              </Pane>
+                              <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label layoutX="76.0" layoutY="13.0" text="Friday" />
+                                 </children>
+                              </Pane>
+                              <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="73.0" layoutY="13.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Saturday" />
+                                 </children>
+                              </Pane>
+                           </children>
+                           <VBox.margin>
+                              <Insets right="15.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <ScrollPane fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" pannable="true">
+                           <content>
+                              <HBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                                 <children>
+                                    <Pane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1444.0" prefWidth="60.0" styleClass="calendarColumn">
                                        <children>
-                                          <Label alignment="CENTER" contentDisplay="CENTER" layoutX="23.0" layoutY="22.0" text="12" />
-                                          <Separator layoutX="1.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                          <VBox layoutX="-2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1440.0" prefWidth="60.0">
+                                             <children>
+                                                <Pane prefHeight="60.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="23.0" layoutY="22.0" text="12" />
+                                                      <Separator layoutX="1.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="60.0">
+                                                   <children>
+                                                      <Label layoutX="27.0" layoutY="22.0" text="1" />
+                                                      <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="60.0">
+                                                   <children>
+                                                      <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                                      <Label layoutX="26.0" layoutY="22.0" text="2" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="60.0">
+                                                   <children>
+                                                      <Label layoutX="26.0" layoutY="22.0" text="3" />
+                                                      <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="60.0">
+                                                   <children>
+                                                      <Label layoutX="26.0" layoutY="22.0" text="4" />
+                                                      <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="60.0">
+                                                   <children>
+                                                      <Label layoutX="26.0" layoutY="22.0" text="5" />
+                                                      <Separator layoutX="1.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="60.0">
+                                                   <children>
+                                                      <Label layoutX="26.0" layoutY="22.0" text="6" />
+                                                      <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="60.0">
+                                                   <children>
+                                                      <Label layoutX="26.0" layoutY="22.0" text="7" />
+                                                      <Separator layoutX="1.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="60.0">
+                                                   <children>
+                                                      <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                                      <Label layoutX="26.0" layoutY="22.0" text="8" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="60.0">
+                                                   <children>
+                                                      <Label layoutX="26.0" layoutY="22.0" text="9" />
+                                                      <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="60.0">
+                                                   <children>
+                                                      <Label layoutX="23.0" layoutY="22.0" text="10" />
+                                                      <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="60.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" layoutX="24.0" layoutY="22.0" text="11" />
+                                                      <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="60.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" layoutX="23.0" layoutY="22.0" text="12" />
+                                                      <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="60.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" layoutX="27.0" layoutY="22.0" text="1" />
+                                                      <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="60.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" layoutX="26.0" layoutY="22.0" text="2" />
+                                                      <Separator layoutX="1.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="60.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" layoutX="26.0" layoutY="22.0" text="3" />
+                                                      <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="60.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" layoutX="26.0" layoutY="22.0" text="4" />
+                                                      <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="60.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" layoutX="30.0" layoutY="22.0" text="5" />
+                                                      <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="60.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" layoutX="30.0" layoutY="22.0" text="6" />
+                                                      <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="60.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" layoutX="30.0" layoutY="22.0" text="7" />
+                                                      <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="60.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" layoutX="30.0" layoutY="22.0" text="8" />
+                                                      <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="60.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" layoutX="30.0" layoutY="22.0" text="9" />
+                                                      <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="60.0">
+                                                   <children>
+                                                      <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                                      <Label alignment="CENTER" layoutX="30.0" layoutY="22.0" text="10" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="60.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" layoutX="30.0" layoutY="22.0" text="11" />
+                                                   </children>
+                                                </Pane>
+                                             </children>
+                                          </VBox>
                                        </children>
                                     </Pane>
-                                    <Pane prefHeight="60.0">
+                                    <Pane fx:id="sundayColumn" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1444.0" style="-fx-background-color: lightgrey;" styleClass="calendarColumn" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <Label layoutX="27.0" layoutY="22.0" text="1" />
-                                          <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                          <Separator layoutY="59.0" prefWidth="200.0" />
+                                          <Separator layoutY="119.0" prefWidth="200.0" />
+                                          <Separator layoutY="179.0" prefWidth="200.0" />
+                                          <Separator layoutY="239.0" prefWidth="200.0" />
+                                          <Separator layoutY="299.0" prefWidth="200.0" />
+                                          <Separator layoutY="359.0" prefWidth="200.0" />
+                                          <Separator layoutY="419.0" prefWidth="200.0" />
+                                          <Separator layoutY="479.0" prefWidth="200.0" />
+                                          <Separator layoutY="539.0" prefWidth="200.0" />
+                                          <Separator layoutY="599.0" prefWidth="200.0" />
+                                          <Separator layoutY="659.0" prefWidth="200.0" />
+                                          <Separator layoutY="719.0" prefWidth="200.0" />
+                                          <Separator layoutY="779.0" prefWidth="200.0" />
+                                          <Separator layoutY="839.0" prefWidth="200.0" />
+                                          <Separator layoutY="899.0" prefWidth="200.0" />
+                                          <Separator layoutY="959.0" prefWidth="200.0" />
+                                          <Separator layoutY="1019.0" prefWidth="200.0" />
+                                          <Separator layoutY="1079.0" prefWidth="200.0" />
+                                          <Separator layoutY="1139.0" prefWidth="200.0" />
+                                          <Separator layoutY="1199.0" prefWidth="200.0" />
+                                          <Separator layoutY="1259.0" prefWidth="200.0" />
+                                          <Separator layoutY="1319.0" prefWidth="200.0" />
+                                          <Separator layoutY="1379.0" prefWidth="200.0" />
                                        </children>
                                     </Pane>
-                                    <Pane prefHeight="60.0">
+                                    <Pane fx:id="mondayColumn" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1444.0" styleClass="calendarColumn" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
-                                          <Label layoutX="26.0" layoutY="22.0" text="2" />
+                                          <Separator layoutY="59.0" prefWidth="200.0" />
+                                          <Separator layoutY="119.0" prefWidth="200.0" />
+                                          <Separator layoutY="179.0" prefWidth="200.0" />
+                                          <Separator layoutY="239.0" prefWidth="200.0" />
+                                          <Separator layoutY="299.0" prefWidth="200.0" />
+                                          <Separator layoutY="359.0" prefWidth="200.0" />
+                                          <Separator layoutY="419.0" prefWidth="200.0" />
+                                          <Separator layoutY="479.0" prefWidth="200.0" />
+                                          <Separator layoutY="539.0" prefWidth="200.0" />
+                                          <Separator layoutY="599.0" prefWidth="200.0" />
+                                          <Separator layoutY="659.0" prefWidth="200.0" />
+                                          <Separator layoutY="719.0" prefWidth="200.0" />
+                                          <Separator layoutY="779.0" prefWidth="200.0" />
+                                          <Separator layoutY="839.0" prefWidth="200.0" />
+                                          <Separator layoutY="899.0" prefWidth="200.0" />
+                                          <Separator layoutY="959.0" prefWidth="200.0" />
+                                          <Separator layoutY="1019.0" prefWidth="200.0" />
+                                          <Separator layoutY="1079.0" prefWidth="200.0" />
+                                          <Separator layoutY="1139.0" prefWidth="200.0" />
+                                          <Separator layoutY="1199.0" prefWidth="200.0" />
+                                          <Separator layoutY="1259.0" prefWidth="200.0" />
+                                          <Separator layoutY="1319.0" prefWidth="200.0" />
+                                          <Separator layoutY="1379.0" prefWidth="200.0" />
                                        </children>
                                     </Pane>
-                                    <Pane prefHeight="60.0">
+                                    <Pane fx:id="tuesdayColumn" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1444.0" styleClass="calendarColumn" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <Label layoutX="26.0" layoutY="22.0" text="3" />
-                                          <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                          <Separator layoutY="59.0" prefWidth="200.0" />
+                                          <Separator layoutY="119.0" prefWidth="200.0" />
+                                          <Separator layoutY="179.0" prefWidth="200.0" />
+                                          <Separator layoutY="239.0" prefWidth="200.0" />
+                                          <Separator layoutY="299.0" prefWidth="200.0" />
+                                          <Separator layoutY="359.0" prefWidth="200.0" />
+                                          <Separator layoutY="419.0" prefWidth="200.0" />
+                                          <Separator layoutY="479.0" prefWidth="200.0" />
+                                          <Separator layoutY="539.0" prefWidth="200.0" />
+                                          <Separator layoutY="599.0" prefWidth="200.0" />
+                                          <Separator layoutY="659.0" prefWidth="200.0" />
+                                          <Separator layoutY="719.0" prefWidth="200.0" />
+                                          <Separator layoutY="779.0" prefWidth="200.0" />
+                                          <Separator layoutY="839.0" prefWidth="200.0" />
+                                          <Separator layoutY="899.0" prefWidth="200.0" />
+                                          <Separator layoutY="959.0" prefWidth="200.0" />
+                                          <Separator layoutY="1019.0" prefWidth="200.0" />
+                                          <Separator layoutY="1079.0" prefWidth="200.0" />
+                                          <Separator layoutY="1139.0" prefWidth="200.0" />
+                                          <Separator layoutY="1199.0" prefWidth="200.0" />
+                                          <Separator layoutY="1259.0" prefWidth="200.0" />
+                                          <Separator layoutY="1319.0" prefWidth="200.0" />
+                                          <Separator layoutY="1379.0" prefWidth="200.0" />
                                        </children>
                                     </Pane>
-                                    <Pane prefHeight="60.0">
+                                    <Pane fx:id="wednesdayColumn" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1444.0" styleClass="calendarColumn" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <Label layoutX="26.0" layoutY="22.0" text="4" />
-                                          <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                          <Separator layoutY="59.0" prefWidth="200.0" />
+                                          <Separator layoutY="119.0" prefWidth="200.0" />
+                                          <Separator layoutY="179.0" prefWidth="200.0" />
+                                          <Separator layoutY="239.0" prefWidth="200.0" />
+                                          <Separator layoutY="299.0" prefWidth="200.0" />
+                                          <Separator layoutY="359.0" prefWidth="200.0" />
+                                          <Separator layoutY="419.0" prefWidth="200.0" />
+                                          <Separator layoutY="479.0" prefWidth="200.0" />
+                                          <Separator layoutY="539.0" prefWidth="200.0" />
+                                          <Separator layoutY="599.0" prefWidth="200.0" />
+                                          <Separator layoutY="659.0" prefWidth="200.0" />
+                                          <Separator layoutY="719.0" prefWidth="200.0" />
+                                          <Separator layoutY="779.0" prefWidth="200.0" />
+                                          <Separator layoutY="839.0" prefWidth="200.0" />
+                                          <Separator layoutY="899.0" prefWidth="200.0" />
+                                          <Separator layoutY="959.0" prefWidth="200.0" />
+                                          <Separator layoutY="1019.0" prefWidth="200.0" />
+                                          <Separator layoutY="1079.0" prefWidth="200.0" />
+                                          <Separator layoutY="1139.0" prefWidth="200.0" />
+                                          <Separator layoutY="1199.0" prefWidth="200.0" />
+                                          <Separator layoutY="1259.0" prefWidth="200.0" />
+                                          <Separator layoutY="1319.0" prefWidth="200.0" />
+                                          <Separator layoutY="1379.0" prefWidth="200.0" />
                                        </children>
                                     </Pane>
-                                    <Pane prefHeight="60.0">
+                                    <Pane fx:id="thursdayColumn" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1444.0" styleClass="calendarColumn" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <Label layoutX="26.0" layoutY="22.0" text="5" />
-                                          <Separator layoutX="1.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                          <Separator layoutY="59.0" prefWidth="200.0" />
+                                          <Separator layoutY="119.0" prefWidth="200.0" />
+                                          <Separator layoutY="179.0" prefWidth="200.0" />
+                                          <Separator layoutY="239.0" prefWidth="200.0" />
+                                          <Separator layoutY="299.0" prefWidth="200.0" />
+                                          <Separator layoutY="359.0" prefWidth="200.0" />
+                                          <Separator layoutY="419.0" prefWidth="200.0" />
+                                          <Separator layoutY="479.0" prefWidth="200.0" />
+                                          <Separator layoutY="539.0" prefWidth="200.0" />
+                                          <Separator layoutY="599.0" prefWidth="200.0" />
+                                          <Separator layoutY="659.0" prefWidth="200.0" />
+                                          <Separator layoutY="719.0" prefWidth="200.0" />
+                                          <Separator layoutY="779.0" prefWidth="200.0" />
+                                          <Separator layoutY="839.0" prefWidth="200.0" />
+                                          <Separator layoutY="899.0" prefWidth="200.0" />
+                                          <Separator layoutY="959.0" prefWidth="200.0" />
+                                          <Separator layoutY="1019.0" prefWidth="200.0" />
+                                          <Separator layoutY="1079.0" prefWidth="200.0" />
+                                          <Separator layoutY="1139.0" prefWidth="200.0" />
+                                          <Separator layoutY="1199.0" prefWidth="200.0" />
+                                          <Separator layoutY="1259.0" prefWidth="200.0" />
+                                          <Separator layoutY="1319.0" prefWidth="200.0" />
+                                          <Separator layoutY="1379.0" prefWidth="200.0" />
                                        </children>
                                     </Pane>
-                                    <Pane prefHeight="60.0">
+                                    <Pane fx:id="fridayColumn" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1444.0" styleClass="calendarColumn" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <Label layoutX="26.0" layoutY="22.0" text="6" />
-                                          <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
+                                          <Separator layoutY="59.0" prefWidth="200.0" />
+                                          <Separator layoutY="119.0" prefWidth="200.0" />
+                                          <Separator layoutY="179.0" prefWidth="200.0" />
+                                          <Separator layoutY="239.0" prefWidth="200.0" />
+                                          <Separator layoutY="299.0" prefWidth="200.0" />
+                                          <Separator layoutY="359.0" prefWidth="200.0" />
+                                          <Separator layoutY="419.0" prefWidth="200.0" />
+                                          <Separator layoutY="479.0" prefWidth="200.0" />
+                                          <Separator layoutY="539.0" prefWidth="200.0" />
+                                          <Separator layoutY="599.0" prefWidth="200.0" />
+                                          <Separator layoutY="659.0" prefWidth="200.0" />
+                                          <Separator layoutY="719.0" prefWidth="200.0" />
+                                          <Separator layoutY="779.0" prefWidth="200.0" />
+                                          <Separator layoutY="839.0" prefWidth="200.0" />
+                                          <Separator layoutY="899.0" prefWidth="200.0" />
+                                          <Separator layoutY="959.0" prefWidth="200.0" />
+                                          <Separator layoutY="1019.0" prefWidth="200.0" />
+                                          <Separator layoutY="1079.0" prefWidth="200.0" />
+                                          <Separator layoutY="1139.0" prefWidth="200.0" />
+                                          <Separator layoutY="1199.0" prefWidth="200.0" />
+                                          <Separator layoutY="1259.0" prefWidth="200.0" />
+                                          <Separator layoutY="1319.0" prefWidth="200.0" />
+                                          <Separator layoutY="1379.0" prefWidth="200.0" />
                                        </children>
                                     </Pane>
-                                    <Pane prefHeight="60.0">
+                                    <Pane fx:id="saturdayColumn" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1444.0" style="-fx-background-color: lightgrey;" styleClass="calendarColumn" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <Label layoutX="26.0" layoutY="22.0" text="7" />
-                                          <Separator layoutX="1.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
-                                       </children>
-                                    </Pane>
-                                    <Pane prefHeight="60.0">
-                                       <children>
-                                          <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
-                                          <Label layoutX="26.0" layoutY="22.0" text="8" />
-                                       </children>
-                                    </Pane>
-                                    <Pane prefHeight="60.0">
-                                       <children>
-                                          <Label layoutX="26.0" layoutY="22.0" text="9" />
-                                          <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
-                                       </children>
-                                    </Pane>
-                                    <Pane prefHeight="60.0">
-                                       <children>
-                                          <Label layoutX="43.0" layoutY="22.0" text="10" />
-                                          <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
-                                       </children>
-                                    </Pane>
-                                    <Pane prefHeight="60.0">
-                                       <children>
-                                          <Label alignment="CENTER" layoutX="44.0" layoutY="22.0" text="11" />
-                                          <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
-                                       </children>
-                                    </Pane>
-                                    <Pane prefHeight="60.0">
-                                       <children>
-                                          <Label alignment="CENTER" layoutX="43.0" layoutY="22.0" text="12" />
-                                          <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
-                                       </children>
-                                    </Pane>
-                                    <Pane prefHeight="60.0">
-                                       <children>
-                                          <Label alignment="CENTER" layoutX="47.0" layoutY="22.0" text="1" />
-                                          <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
-                                       </children>
-                                    </Pane>
-                                    <Pane prefHeight="60.0">
-                                       <children>
-                                          <Label alignment="CENTER" layoutX="46.0" layoutY="22.0" text="2" />
-                                          <Separator layoutX="1.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
-                                       </children>
-                                    </Pane>
-                                    <Pane prefHeight="60.0">
-                                       <children>
-                                          <Label alignment="CENTER" layoutX="46.0" layoutY="22.0" text="3" />
-                                          <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
-                                       </children>
-                                    </Pane>
-                                    <Pane prefHeight="60.0">
-                                       <children>
-                                          <Label alignment="CENTER" layoutX="46.0" layoutY="22.0" text="4" />
-                                          <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
-                                       </children>
-                                    </Pane>
-                                    <Pane prefHeight="60.0">
-                                       <children>
-                                          <Label alignment="CENTER" layoutX="46.0" layoutY="22.0" text="5" />
-                                          <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
-                                       </children>
-                                    </Pane>
-                                    <Pane prefHeight="60.0">
-                                       <children>
-                                          <Label alignment="CENTER" layoutX="46.0" layoutY="22.0" text="6" />
-                                          <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
-                                       </children>
-                                    </Pane>
-                                    <Pane prefHeight="60.0">
-                                       <children>
-                                          <Label alignment="CENTER" layoutX="46.0" layoutY="22.0" text="7" />
-                                          <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
-                                       </children>
-                                    </Pane>
-                                    <Pane prefHeight="60.0">
-                                       <children>
-                                          <Label alignment="CENTER" layoutX="46.0" layoutY="22.0" text="8" />
-                                          <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
-                                       </children>
-                                    </Pane>
-                                    <Pane prefHeight="60.0">
-                                       <children>
-                                          <Label alignment="CENTER" layoutX="46.0" layoutY="22.0" text="9" />
-                                          <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
-                                       </children>
-                                    </Pane>
-                                    <Pane prefHeight="60.0">
-                                       <children>
-                                          <Separator layoutX="2.0" layoutY="58.0" prefHeight="5.0" prefWidth="97.0" />
-                                          <Label alignment="CENTER" layoutX="43.0" layoutY="22.0" text="10" />
-                                       </children>
-                                    </Pane>
-                                    <Pane prefHeight="60.0">
-                                       <children>
-                                          <Label alignment="CENTER" layoutX="44.0" layoutY="22.0" text="11" />
+                                          <Separator layoutY="59.0" prefWidth="200.0" />
+                                          <Separator layoutY="119.0" prefWidth="200.0" />
+                                          <Separator layoutY="179.0" prefWidth="200.0" />
+                                          <Separator layoutY="239.0" prefWidth="200.0" />
+                                          <Separator layoutY="299.0" prefWidth="200.0" />
+                                          <Separator layoutY="359.0" prefWidth="200.0" />
+                                          <Separator layoutY="419.0" prefWidth="200.0" />
+                                          <Separator layoutY="479.0" prefWidth="200.0" />
+                                          <Separator layoutY="539.0" prefWidth="200.0" />
+                                          <Separator layoutY="599.0" prefWidth="200.0" />
+                                          <Separator layoutY="659.0" prefWidth="200.0" />
+                                          <Separator layoutY="719.0" prefWidth="200.0" />
+                                          <Separator layoutY="779.0" prefWidth="200.0" />
+                                          <Separator layoutY="839.0" prefWidth="200.0" />
+                                          <Separator layoutY="899.0" prefWidth="200.0" />
+                                          <Separator layoutY="959.0" prefWidth="200.0" />
+                                          <Separator layoutY="1019.0" prefWidth="200.0" />
+                                          <Separator layoutY="1079.0" prefWidth="200.0" />
+                                          <Separator layoutY="1139.0" prefWidth="200.0" />
+                                          <Separator layoutY="1199.0" prefWidth="200.0" />
+                                          <Separator layoutY="1259.0" prefWidth="200.0" />
+                                          <Separator layoutY="1319.0" prefWidth="200.0" />
+                                          <Separator layoutY="1379.0" prefWidth="200.0" />
                                        </children>
                                     </Pane>
                                  </children>
-                              </VBox>
-                           </children>
-                        </Pane>
-                        <Pane prefHeight="200.0" prefWidth="196.0" style="-fx-border-color: lightgrey;">
-                           <children>
-                              <Separator layoutY="59.0" prefWidth="200.0" />
-                              <Separator layoutY="119.0" prefWidth="200.0" />
-                              <Separator layoutY="179.0" prefWidth="200.0" />
-                              <Separator layoutY="239.0" prefWidth="200.0" />
-                              <Separator layoutY="299.0" prefWidth="200.0" />
-                              <Separator layoutY="359.0" prefWidth="200.0" />
-                              <Separator layoutY="419.0" prefWidth="200.0" />
-                              <Separator layoutY="479.0" prefWidth="200.0" />
-                              <Separator layoutY="539.0" prefWidth="200.0" />
-                              <Separator layoutY="599.0" prefWidth="200.0" />
-                              <Separator layoutY="659.0" prefWidth="200.0" />
-                              <Separator layoutY="719.0" prefWidth="200.0" />
-                              <Separator layoutY="779.0" prefWidth="200.0" />
-                              <Separator layoutY="839.0" prefWidth="200.0" />
-                              <Separator layoutY="899.0" prefWidth="200.0" />
-                              <Separator layoutY="959.0" prefWidth="200.0" />
-                              <Separator layoutY="1019.0" prefWidth="200.0" />
-                              <Separator layoutY="1079.0" prefWidth="200.0" />
-                              <Separator layoutY="1139.0" prefWidth="200.0" />
-                              <Separator layoutY="1199.0" prefWidth="200.0" />
-                              <Separator layoutY="1259.0" prefWidth="200.0" />
-                              <Separator layoutY="1319.0" prefWidth="200.0" />
-                              <Separator layoutY="1379.0" prefWidth="200.0" />
-                              <Separator layoutX="-2.0" layoutY="-3.0" orientation="VERTICAL" prefHeight="1442.0" prefWidth="8.0" />
-                              <JFXButton alignment="TOP_LEFT" cache="true" contentDisplay="TOP" layoutY="60.0" minHeight="15.0" prefHeight="60.0" prefWidth="192.0" styleClass="appointmentObject" text="Music Elective 1&#10;Joshua Pare&#10;1/25" textOverrun="CLIP" />
-                              <Label layoutY="60.0" prefHeight="17.0" prefWidth="196.0" styleClass="appointmentLabel" text="Thomas Arrington" />
-                           </children>
-                        </Pane>
-                        <Pane prefHeight="200.0" prefWidth="196.0" style="-fx-border-image-insets: lightgrey;">
-                           <children>
-                              <Separator layoutY="59.0" prefWidth="200.0" />
-                              <Separator layoutY="119.0" prefWidth="200.0" />
-                              <Separator layoutY="179.0" prefWidth="200.0" />
-                              <Separator layoutY="239.0" prefWidth="200.0" />
-                              <Separator layoutY="299.0" prefWidth="200.0" />
-                              <Separator layoutY="359.0" prefWidth="200.0" />
-                              <Separator layoutY="419.0" prefWidth="200.0" />
-                              <Separator layoutY="479.0" prefWidth="200.0" />
-                              <Separator layoutY="539.0" prefWidth="200.0" />
-                              <Separator layoutY="599.0" prefWidth="200.0" />
-                              <Separator layoutY="659.0" prefWidth="200.0" />
-                              <Separator layoutY="719.0" prefWidth="200.0" />
-                              <Separator layoutY="779.0" prefWidth="200.0" />
-                              <Separator layoutY="839.0" prefWidth="200.0" />
-                              <Separator layoutY="899.0" prefWidth="200.0" />
-                              <Separator layoutY="959.0" prefWidth="200.0" />
-                              <Separator layoutY="1019.0" prefWidth="200.0" />
-                              <Separator layoutY="1079.0" prefWidth="200.0" />
-                              <Separator layoutY="1139.0" prefWidth="200.0" />
-                              <Separator layoutY="1199.0" prefWidth="200.0" />
-                              <Separator layoutY="1259.0" prefWidth="200.0" />
-                              <Separator layoutY="1319.0" prefWidth="200.0" />
-                              <Separator layoutY="1379.0" prefWidth="200.0" />
-                              <JFXButton alignment="TOP_LEFT" cache="true" contentDisplay="TOP" layoutY="120.0" minHeight="15.0" prefHeight="113.0" prefWidth="192.0" styleClass="appointmentObject" text="Advanced Music Theory&#10;Joshua Pare&#10;1/25" textOverrun="CLIP" />
-                              <Label layoutY="121.0" prefHeight="17.0" prefWidth="196.0" styleClass="appointmentLabel" text="Alex Sirugo" />
-                           </children>
-                        </Pane>
-                        <Pane layoutX="310.0" layoutY="10.0" prefHeight="200.0" prefWidth="196.0" style="-fx-border-color: lightgrey;">
-                           <children>
-                              <Separator layoutY="59.0" prefWidth="200.0" />
-                              <Separator layoutY="119.0" prefWidth="200.0" />
-                              <Separator layoutY="179.0" prefWidth="200.0" />
-                              <Separator layoutY="239.0" prefWidth="200.0" />
-                              <Separator layoutY="299.0" prefWidth="200.0" />
-                              <Separator layoutY="359.0" prefWidth="200.0" />
-                              <Separator layoutY="419.0" prefWidth="200.0" />
-                              <Separator layoutY="479.0" prefWidth="200.0" />
-                              <Separator layoutY="539.0" prefWidth="200.0" />
-                              <Separator layoutY="599.0" prefWidth="200.0" />
-                              <Separator layoutY="659.0" prefWidth="200.0" />
-                              <Separator layoutY="719.0" prefWidth="200.0" />
-                              <Separator layoutY="779.0" prefWidth="200.0" />
-                              <Separator layoutY="839.0" prefWidth="200.0" />
-                              <Separator layoutY="899.0" prefWidth="200.0" />
-                              <Separator layoutY="959.0" prefWidth="200.0" />
-                              <Separator layoutY="1019.0" prefWidth="200.0" />
-                              <Separator layoutY="1079.0" prefWidth="200.0" />
-                              <Separator layoutY="1139.0" prefWidth="200.0" />
-                              <Separator layoutY="1199.0" prefWidth="200.0" />
-                              <Separator layoutY="1259.0" prefWidth="200.0" />
-                              <Separator layoutY="1319.0" prefWidth="200.0" />
-                              <Separator layoutY="1379.0" prefWidth="200.0" />
-                           </children>
-                        </Pane>
-                        <Pane layoutX="510.0" layoutY="10.0" prefHeight="200.0" prefWidth="196.0">
-                           <children>
-                              <Separator layoutY="59.0" prefWidth="200.0" />
-                              <Separator layoutY="119.0" prefWidth="200.0" />
-                              <Separator layoutY="179.0" prefWidth="200.0" />
-                              <Separator layoutY="239.0" prefWidth="200.0" />
-                              <Separator layoutY="299.0" prefWidth="200.0" />
-                              <Separator layoutY="359.0" prefWidth="200.0" />
-                              <Separator layoutY="419.0" prefWidth="200.0" />
-                              <Separator layoutY="479.0" prefWidth="200.0" />
-                              <Separator layoutY="539.0" prefWidth="200.0" />
-                              <Separator layoutY="599.0" prefWidth="200.0" />
-                              <Separator layoutY="659.0" prefWidth="200.0" />
-                              <Separator layoutY="719.0" prefWidth="200.0" />
-                              <Separator layoutY="779.0" prefWidth="200.0" />
-                              <Separator layoutY="839.0" prefWidth="200.0" />
-                              <Separator layoutY="899.0" prefWidth="200.0" />
-                              <Separator layoutY="959.0" prefWidth="200.0" />
-                              <Separator layoutY="1019.0" prefWidth="200.0" />
-                              <Separator layoutY="1079.0" prefWidth="200.0" />
-                              <Separator layoutY="1139.0" prefWidth="200.0" />
-                              <Separator layoutY="1199.0" prefWidth="200.0" />
-                              <Separator layoutY="1259.0" prefWidth="200.0" />
-                              <Separator layoutY="1319.0" prefWidth="200.0" />
-                              <Separator layoutY="1379.0" prefWidth="200.0" />
-                           </children>
-                        </Pane>
-                        <Pane layoutX="710.0" layoutY="10.0" prefHeight="200.0" prefWidth="196.0" style="-fx-border-color: lightgrey;">
-                           <children>
-                              <Separator layoutY="59.0" prefWidth="200.0" />
-                              <Separator layoutY="119.0" prefWidth="200.0" />
-                              <Separator layoutY="179.0" prefWidth="200.0" />
-                              <Separator layoutY="239.0" prefWidth="200.0" />
-                              <Separator layoutY="299.0" prefWidth="200.0" />
-                              <Separator layoutY="359.0" prefWidth="200.0" />
-                              <Separator layoutY="419.0" prefWidth="200.0" />
-                              <Separator layoutY="479.0" prefWidth="200.0" />
-                              <Separator layoutY="539.0" prefWidth="200.0" />
-                              <Separator layoutY="599.0" prefWidth="200.0" />
-                              <Separator layoutY="659.0" prefWidth="200.0" />
-                              <Separator layoutY="719.0" prefWidth="200.0" />
-                              <Separator layoutY="779.0" prefWidth="200.0" />
-                              <Separator layoutY="839.0" prefWidth="200.0" />
-                              <Separator layoutY="899.0" prefWidth="200.0" />
-                              <Separator layoutY="959.0" prefWidth="200.0" />
-                              <Separator layoutY="1019.0" prefWidth="200.0" />
-                              <Separator layoutY="1079.0" prefWidth="200.0" />
-                              <Separator layoutY="1139.0" prefWidth="200.0" />
-                              <Separator layoutY="1199.0" prefWidth="200.0" />
-                              <Separator layoutY="1259.0" prefWidth="200.0" />
-                              <Separator layoutY="1319.0" prefWidth="200.0" />
-                              <Separator layoutY="1379.0" prefWidth="200.0" />
-                           </children>
-                        </Pane>
+                              </HBox>
+                           </content>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </ScrollPane>
                      </children>
-                  </HBox>
-               </content>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </ScrollPane>
-            <HBox layoutX="20.0" layoutY="131.0" prefHeight="42.0" prefWidth="1023.0">
-               <children>
-                  <Pane prefHeight="42.0" prefWidth="67.0" />
-                  <Pane prefHeight="200.0" prefWidth="200.0">
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" fillWidth="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="275.0" stylesheets="@mainpage.css">
                      <children>
-                        <Label layoutX="74.0" layoutY="13.0" text="Monday" />
+                        <JFXButton fx:id="menuButton" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="245.0" style="-fx-border-color: purple;" styleClass="appointmentButton" text="Main Manu">
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="15.0" right="15.0" top="15.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="addAppointment" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="245.0" styleClass="appointmentButton" text="Add Appointment">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="20.0" right="20.0" />
+                           </VBox.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="deleteAppointment" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="245.0" styleClass="appointmentButton" text="Delete Appointment">
+                           <VBox.margin>
+                              <Insets bottom="15.0" left="20.0" right="20.0" />
+                           </VBox.margin>
+                        </JFXButton>
+                        <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="893.0">
+                           <content>
+                              <StackPane prefWidth="256.0">
+                                 <children>
+                                    <VBox prefHeight="906.0" prefWidth="256.0">
+                                       <children>
+                                          <Pane id="rightToolbar" prefHeight="428.0" prefWidth="209.0">
+                                             <children>
+                                                <Separator layoutX="24.0" layoutY="39.0" prefWidth="200.0" />
+                                                <JFXButton id="macroLabel" layoutX="33.0" prefHeight="40.0" prefWidth="181.0" text="Filters">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </JFXButton>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Pane>
+                                          <Pane id="macroMenu" prefHeight="450.0" prefWidth="209.0">
+                                             <children>
+                                                <Separator layoutX="23.0" layoutY="39.0" prefWidth="200.0" />
+                                                <JFXButton id="macroLabel" buttonType="RAISED" layoutX="33.0" prefHeight="40.0" prefWidth="181.0" text="Quick Actions">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </JFXButton>
+                                                <JFXButton fx:id="deleteAppointment1" buttonType="RAISED" layoutX="23.0" layoutY="52.0" prefHeight="27.0" prefWidth="200.0" styleClass="macroButton" text="Auto-Extend" />
+                                                <JFXButton fx:id="deleteAppointment11" buttonType="RAISED" layoutX="23.0" layoutY="85.0" prefHeight="27.0" prefWidth="200.0" styleClass="macroButton" text="Push to End (Session)" />
+                                                <JFXButton fx:id="deleteAppointment111" buttonType="RAISED" layoutX="23.0" layoutY="119.0" prefHeight="27.0" prefWidth="200.0" styleClass="macroButton" text="Push To End (Day)" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                           </content>
+                        </ScrollPane>
                      </children>
-                  </Pane>
-                  <Pane prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <Label layoutX="72.0" layoutY="13.0" text="Tuesday" />
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <Label layoutX="62.0" layoutY="13.0" text="Wednesday" />
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <Label layoutX="70.0" layoutY="13.0" text="Thursday" />
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <Label layoutX="80.0" layoutY="13.0" text="Friday" />
-                     </children>
-                  </Pane>
+                  </VBox>
                </children>
             </HBox>
-            <HBox layoutX="359.0" layoutY="83.0" prefHeight="42.0" prefWidth="419.0">
+            <VBox fx:id="appointmentControl" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="926.0" minWidth="-Infinity" prefWidth="384.0" styleClass="appointmentControl" StackPane.alignment="BOTTOM_RIGHT">
                <children>
-                  <Pane prefHeight="42.0" prefWidth="100.0">
+                  <Pane id="appointmentHeader" prefHeight="60.0" prefWidth="382.0">
                      <children>
-                        <JFXButton layoutX="6.0" layoutY="1.0" styleClass="weekSelect" text="&lt;" />
+                        <Label layoutX="140.0" layoutY="17.0" prefHeight="26.0" prefWidth="102.0" style="-fx-text-fill: white;" text="Appointment">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
                      </children>
                   </Pane>
-                  <Pane prefHeight="200.0" prefWidth="200.0">
+                  <Pane fx:id="classSession">
                      <children>
-                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="15.0" layoutY="8.0" styleClass="weekSelect" text="September 5" />
+                        <JFXButton fx:id="classSessionButton" prefHeight="60.0" prefWidth="382.0" styleClass="appointmentControlButton" text="Class Session">
+                           <graphic>
+                              <ImageView fx:id="arrowGlyph" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pictures/12690011911543238858-128.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
                      </children>
                   </Pane>
-                  <Pane prefHeight="49.0" prefWidth="56.0">
+                  <ScrollPane fx:id="classSessionPane" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="0.0" />
+                  <Pane fx:id="masterySession">
                      <children>
-                        <Label layoutY="8.0" styleClass="weekSelect" text="-" />
+                        <JFXButton fx:id="masterySessionButton" minHeight="0.0" prefHeight="60.0" prefWidth="382.0" styleClass="appointmentControlButton" text="Mastery Session">
+                           <graphic>
+                              <ImageView fx:id="arrowGlyph1" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pictures/12690011911543238858-128.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
                      </children>
                   </Pane>
-                  <Pane prefHeight="200.0" prefWidth="200.0">
+                  <ScrollPane fitToWidth="true" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="0.0" />
+                  <Pane fx:id="tutoringSession">
                      <children>
-                        <Label layoutX="11.0" layoutY="8.0" styleClass="weekSelect" text="September 12" />
+                        <JFXButton fx:id="tutoringSessionButton" minHeight="0.0" prefHeight="60.0" prefWidth="382.0" styleClass="appointmentControlButton" text="Tutoring Session">
+                           <graphic>
+                              <ImageView fx:id="arrowGlyph2" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pictures/12690011911543238858-128.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
                      </children>
                   </Pane>
-                  <Pane prefHeight="42.0" prefWidth="100.0">
+                  <Pane fx:id="unpaidEvent">
                      <children>
-                        <JFXButton layoutX="6.0" layoutY="1.0" styleClass="weekSelect" text="&gt;" />
+                        <JFXButton fx:id="unpaidEventButton" minHeight="0.0" prefHeight="60.0" prefWidth="384.0" styleClass="appointmentControlButton" text="Unpaid Event">
+                           <graphic>
+                              <ImageView fx:id="arrowGlyph3" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pictures/12690011911543238858-128.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
                      </children>
                   </Pane>
-               </children>
-            </HBox>
-            <VBox id="leftToolbar" fx:id="drawer" prefHeight="800.0" prefWidth="200.0" stylesheets="@mainpage.css">
-               <children>
-                  <Pane prefHeight="97.0" prefWidth="151.0">
+                  <Pane fx:id="planningTime">
                      <children>
-                        <ImageView fx:id="image" fitHeight="56.0" fitWidth="151.0" layoutX="25.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@pictures/FusionLogoFullReverse.png" />
-                           </image>
-                        </ImageView>
+                        <JFXButton fx:id="planningTimeButton" minHeight="0.0" prefHeight="60.0" prefWidth="382.0" styleClass="appointmentControlButton" text="Planning Time">
+                           <graphic>
+                              <ImageView fx:id="arrowGlyph4" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pictures/12690011911543238858-128.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
                      </children>
                   </Pane>
-                  <JFXButton maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="151.0" styleClass="leftMenuButton" text="Home" textFill="WHITE">
-                     <font>
-                        <Font name="Arial" size="13.0" />
-                     </font>
-                  </JFXButton>
-                  <Separator layoutX="10.0" layoutY="181.0" maxHeight="-Infinity" minHeight="-Infinity" opacity="0.5" prefHeight="5.0" prefWidth="139.0">
-                     <padding>
-                        <Insets left="10.0" right="10.0" />
-                     </padding>
-                  </Separator>
-                  <JFXButton maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="126.0" styleClass="leftMenuButton" text="Reports" textFill="WHITE" />
-                  <Separator maxHeight="-Infinity" minHeight="-Infinity" opacity="0.5" prefHeight="5.0" prefWidth="139.0">
-                     <padding>
-                        <Insets left="10.0" right="10.0" />
-                     </padding>
-                  </Separator>
-                  <JFXButton maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="151.0" styleClass="leftMenuButton" text="Students" textFill="WHITE" />
-                  <Separator maxHeight="-Infinity" minHeight="-Infinity" opacity="0.5" prefHeight="5.0" prefWidth="139.0">
-                     <padding>
-                        <Insets left="10.0" right="10.0" />
-                     </padding>
-                  </Separator>
-                  <JFXButton maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="151.0" styleClass="leftMenuButton" text="Teachers" textFill="WHITE" />
-                  <Separator maxHeight="-Infinity" minHeight="-Infinity" opacity="0.5" prefHeight="3.0" prefWidth="139.0">
-                     <padding>
-                        <Insets left="10.0" right="10.0" />
-                     </padding>
-                  </Separator>
-                  <JFXButton maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="151.0" styleClass="leftMenuButton" text="Smart Scheduler" textFill="WHITE" />
-                  <Separator maxHeight="-Infinity" minHeight="-Infinity" opacity="0.5" prefHeight="5.0" prefWidth="139.0">
-                     <padding>
-                        <Insets left="10.0" right="10.0" />
-                     </padding>
-                  </Separator>
-                  <JFXButton maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="151.0" styleClass="leftMenuButton" text="Macros" textFill="WHITE" />
+                  <Pane fx:id="discretionaryTime">
+                     <children>
+                        <JFXButton fx:id="discretionaryTimeButton" minHeight="0.0" prefHeight="60.0" prefWidth="382.0" styleClass="appointmentControlButton" text="Discretionary Time">
+                           <graphic>
+                              <ImageView fx:id="arrowGlyph41" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pictures/12690011911543238858-128.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </Pane>
                </children>
             </VBox>
          </children>
-      </Pane>
-      <VBox prefHeight="800.0" prefWidth="221.0" stylesheets="@mainpage.css">
-         <children>
-            <JFXButton fx:id="menuButton" prefHeight="40.0" prefWidth="191.0" style="-fx-border-color: purple;" styleClass="appointmentButton" text="Main Manu">
-               <VBox.margin>
-                  <Insets bottom="20.0" left="15.0" right="15.0" top="15.0" />
-               </VBox.margin></JFXButton>
-            <JFXButton fx:id="addAppointment" prefHeight="27.0" prefWidth="204.0" styleClass="appointmentButton" text="Add Appointment">
-               <VBox.margin>
-                  <Insets bottom="10.0" left="20.0" right="20.0" top="14.0" />
-               </VBox.margin></JFXButton>
-            <JFXButton fx:id="deleteAppointment" prefHeight="27.0" prefWidth="208.0" styleClass="appointmentButton" text="Delete Appointment">
-               <VBox.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" />
-               </VBox.margin></JFXButton>
-            <ScrollPane prefHeight="628.0" prefWidth="221.0">
-               <content>
-                  <VBox prefHeight="624.0" prefWidth="219.0">
-                     <children>
-                        <Pane id="rightToolbar" prefHeight="292.0" prefWidth="219.0">
-                           <children>
-                              <Separator layoutX="12.0" layoutY="39.0" prefWidth="200.0" />
-                              <JFXButton id="macroLabel" layoutX="21.0" prefHeight="40.0" prefWidth="181.0" text="Filters" />
-                           </children>
-                        </Pane>
-                        <Pane id="macroMenu" prefHeight="335.0" prefWidth="219.0">
-                           <children>
-                              <Separator layoutX="10.0" layoutY="39.0" prefWidth="200.0" />
-                              <JFXButton id="macroLabel" buttonType="RAISED" layoutX="19.0" prefHeight="40.0" prefWidth="181.0" text="Macros" />
-                              <JFXButton fx:id="deleteAppointment1" buttonType="RAISED" layoutX="6.0" layoutY="53.0" prefHeight="27.0" prefWidth="208.0" styleClass="macroButton" text="Auto-Extend" />
-                              <JFXButton fx:id="deleteAppointment11" buttonType="RAISED" layoutX="6.0" layoutY="87.0" prefHeight="27.0" prefWidth="208.0" styleClass="macroButton" text="Push to End (Session)" />
-                              <JFXButton fx:id="deleteAppointment111" buttonType="RAISED" layoutX="6.0" layoutY="121.0" prefHeight="27.0" prefWidth="208.0" styleClass="macroButton" text="Push To End (Day)" />
-                           </children>
-                        </Pane>
-                     </children>
-                  </VBox>
-               </content>
-            </ScrollPane>
-         </children>
-      </VBox>
+      </StackPane>
    </children>
 </HBox>
